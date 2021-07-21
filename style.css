@@ -44,3 +44,15 @@ input {
 #trybewarts-forms-logo {
   height: 500px;
 }
+
+#full-name {
+  display: flex;
+}
+
+#input-name {
+  flex-grow: 1;
+}
+
+#input-lastname {
+  flex-grow: 1;
+}
