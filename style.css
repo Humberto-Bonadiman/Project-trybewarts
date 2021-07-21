@@ -23,7 +23,7 @@ input {
   border-radius: 5px;
 }
 
-.login-button{
+#login-button{
   padding: 10px;
   background-color: purple;
   color: white;
