@@ -23,11 +23,11 @@ input {
   border-radius: 5px;
 }
 
-#login-button{
+#login-button {
   padding: 10px;
   background-color: purple;
   color: white;
-  font-weight: bold;
+  font-weight: 700;
   border-radius: 5px;
 }
 
