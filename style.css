@@ -7,14 +7,20 @@
 .header {
   background-color: rgb(50, 167, 145);
   display: flex;
+  justify-content: space-between;
 }
 
-.trybewarts-header-logo {
-  align-self: flex-start;
-}
+/*.trybewarts-header-logo {
+
+}*/
 
 .trybewarts-login {
-  justify-content: flex-end;
+  display: flex;
+}
+
+input {
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .login-button{
