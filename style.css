@@ -30,3 +30,12 @@ input {
   font-weight: bold;
   border-radius: 5px;
 }
+
+#body-main {
+  display: flex;
+}
+
+#evaluation-form {
+  display: flex;
+  width: 675px;
+}
