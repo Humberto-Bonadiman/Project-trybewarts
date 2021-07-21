@@ -12,3 +12,15 @@
 .trybewarts-header-logo {
   align-self: flex-start;
 }
+
+.trybewarts-login {
+  justify-content: flex-end;
+}
+
+.login-button{
+  padding: 10px;
+  background-color: purple;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
