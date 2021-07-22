@@ -4,7 +4,7 @@ const loginButton = document.querySelector('#login-button');
 const submitBtn = document.querySelector('#submit-btn');
 const agreement = document.querySelector('#agreement');
 const textArea = document.querySelector('#textarea');
-const charCounterCurrent = document.querySelector('#current');
+const charCounter = document.querySelector('#counter');
 
 function checkLogin() {
   const emailValue = email.value;
@@ -29,7 +29,10 @@ function enableSendButton(event) {
 
 function countingChar(event) {
   const typedTextLength = event.target.value.length;
-  charCounterCurrent.textContent = typedTextLength;
+  const maxTextLength = event.target.maxLength;
+  let numChar = parseInt(charCounter.textContent)
+  numChar = maxTextLength - typedTextLength;
+  charCounter.textContent = numChar;
 }
 
 loginButton.addEventListener('click', checkLogin);
