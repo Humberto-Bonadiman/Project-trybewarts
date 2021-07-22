@@ -28,7 +28,7 @@ function enableSendButton(event) {
 }
 
 function countingChar(event) {
-  let typedTextLength = event.target.value.length;
+  const typedTextLength = event.target.value.length;
   charCounterCurrent.textContent = typedTextLength;
 }
 
