@@ -68,3 +68,11 @@ input {
 #house {
   flex-grow: 1;
 }
+
+#textarea-comment {
+  display: flex;
+}
+
+#counter {
+  align-self: flex-end;
+}

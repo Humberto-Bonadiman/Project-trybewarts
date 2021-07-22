@@ -3,6 +3,8 @@ const password = document.querySelector('#password');
 const loginButton = document.querySelector('#login-button');
 const submitBtn = document.querySelector('#submit-btn');
 const agreement = document.querySelector('#agreement');
+const textArea = document.querySelector('#textarea');
+const charCounterCurrent = document.querySelector('#current');
 
 function checkLogin() {
   const emailValue = email.value;
@@ -25,6 +27,11 @@ function enableSendButton(event) {
   }
 }
 
+function countingChar(event) {
+  let typedTextLength = event.target.value.length;
+  charCounterCurrent.textContent = typedTextLength;
+}
+
 loginButton.addEventListener('click', checkLogin);
 
 // Fonte: https://pt.stackoverflow.com/questions/307752/habilitar-desabilitar-um-bot%C3%A3o-se-pelo-menos-um-checkbox-for-marcado
@@ -34,3 +41,5 @@ loginButton.addEventListener('click', checkLogin);
 }; */
 
 agreement.addEventListener('click', enableSendButton);
+
+textArea.addEventListener('input', countingChar);
