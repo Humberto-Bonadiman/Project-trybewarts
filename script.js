@@ -30,7 +30,7 @@ function enableSendButton(event) {
 function countingChar(event) {
   const typedTextLength = event.target.value.length;
   const maxTextLength = event.target.maxLength;
-  let numChar = parseInt(charCounter.textContent)
+  let numChar = parseInt(charCounter.textContent, 10);
   numChar = maxTextLength - typedTextLength;
   charCounter.textContent = numChar;
 }
