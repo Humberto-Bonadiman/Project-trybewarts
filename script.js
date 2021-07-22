@@ -16,10 +16,21 @@ function checkLogin() {
   return alert('Olá, Tryber!');
 }
 
+function enableSendButton(event) {
+  if (event.target.checked === true) {
+    submitBtn.disabled = false;
+  }
+  if (event.target.checked === false) {
+    submitBtn.disabled = true;
+  }
+}
+
 loginButton.addEventListener('click', checkLogin);
 
 // Fonte: https://pt.stackoverflow.com/questions/307752/habilitar-desabilitar-um-bot%C3%A3o-se-pelo-menos-um-checkbox-for-marcado
-agreement.onclick = function () {
+/*agreement.onclick = function () {
   const checkButton = document.querySelector('input[name=\'agreement\']:checked');
   submitBtn.disabled = checkButton ? false : true;
-};
+};*/
+
+agreement.addEventListener('click', enableSendButton);
