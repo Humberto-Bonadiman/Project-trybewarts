@@ -48,14 +48,14 @@ function countingChar(event) {
 
 function writeFullName() {
   const fullName = `Nome: ${inputName.value} ${inputLastname.value}`;
-  let paragraphFullName = document.createElement('p');
+  const paragraphFullName = document.createElement('p');
   paragraphFullName.innerHTML = fullName;
   evaluationForm.appendChild(paragraphFullName);
 }
 
 function writeEmail() {
   const inputEmailValue = `Email: ${inputEmail.value}`;
-  let paragraphInputEmail = document.createElement('p');
+  const paragraphInputEmail = document.createElement('p');
   paragraphInputEmail.innerHTML = inputEmailValue;
   evaluationForm.appendChild(paragraphInputEmail);
 }
@@ -63,53 +63,53 @@ function writeEmail() {
 function writeHouse() {
   const optionHouse = house.options[house.selectedIndex].text;
   const textHouse = `Casa: ${optionHouse}`;
-  let paragraphHouse = document.createElement('p');
+  const paragraphHouse = document.createElement('p');
   paragraphHouse.innerHTML = textHouse;
   evaluationForm.appendChild(paragraphHouse);
 }
 
 function writeFamily() {
-  let familyItens = [];
+  const familyItens = [];
   for (let index = 0; index < family.length; index += 1) {
     if (family[index].checked) {
       familyItens.push(family[index].value);
     }
   }
   const textFamily = `Família: ${familyItens}`;
-  let paragraphFamily = document.createElement('p');
+  const paragraphFamily = document.createElement('p');
   paragraphFamily.innerHTML = textFamily;
   evaluationForm.appendChild(paragraphFamily);
 }
 
 function writeSubject() {
-  let subjectItens = [];
+  const subjectItens = [];
   for (let index = 0; index < subject.length; index += 1) {
     if (subject[index].checked) {
       subjectItens.push(` ${subject[index].value}`);
     }
   }
   const textSubject = `Matérias: ${subjectItens}`;
-  let paragraphSubject = document.createElement('p');
+  const paragraphSubject = document.createElement('p');
   paragraphSubject.innerHTML = textSubject;
   evaluationForm.appendChild(paragraphSubject);
 }
 
 function writeRate() {
-  let rateItens = [];
+  const rateItens = [];
   for (let index = 0; index < rate.length; index += 1) {
     if (rate[index].checked) {
       rateItens.push(rate[index].value);
     }
   }
   const textRate = `Avaliação: ${rateItens}`;
-  let paragraphRate = document.createElement('p');
+  const paragraphRate = document.createElement('p');
   paragraphRate.innerHTML = textRate;
   evaluationForm.appendChild(paragraphRate);
 }
 
 function writeNotes() {
-  const notes = `Observações: ${textArea.value}`;
-  let paragraphNotes = document.createElement('p');
+  const notes = `Observações: ${textarea.value}`;
+  const paragraphNotes = document.createElement('p');
   paragraphNotes.innerHTML = notes;
   evaluationForm.appendChild(paragraphNotes);
 }
