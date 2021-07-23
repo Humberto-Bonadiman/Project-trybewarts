@@ -5,6 +5,15 @@ const submitBtn = document.querySelector('#submit-btn');
 const agreement = document.querySelector('#agreement');
 const textArea = document.querySelector('#textarea');
 const charCounter = document.querySelector('#counter');
+const evaluationForm = document.querySelector('#evaluation-form');
+const inputName = document.querySelector('#input-name');
+const inputLastname = document.querySelector('#input-lastname');
+const inputEmail = document.querySelector('#input-email');
+const house = document.querySelector('#house');
+const family = document.querySelectorAll('.family');
+const subject = document.querySelectorAll('.subject');
+const rate = document.querySelectorAll('.rate');
+const textarea = document.querySelector('#textarea');
 
 function checkLogin() {
   const emailValue = email.value;
@@ -17,6 +26,8 @@ function checkLogin() {
   }
   return alert('Olá, Tryber!');
 }
+
+// Fonte: https://pt.stackoverflow.com/questions/307752/habilitar-desabilitar-um-bot%C3%A3o-se-pelo-menos-um-checkbox-for-marcado
 
 function enableSendButton(event) {
   if (event.target.checked === true) {
@@ -35,14 +46,89 @@ function countingChar(event) {
   charCounter.textContent = numChar;
 }
 
-loginButton.addEventListener('click', checkLogin);
+function writeFullName() {
+  const fullName = `Nome: ${inputName.value} ${inputLastname.value}`;
+  let paragraphFullName = document.createElement('p');
+  paragraphFullName.innerHTML = fullName;
+  evaluationForm.appendChild(paragraphFullName);
+}
 
-// Fonte: https://pt.stackoverflow.com/questions/307752/habilitar-desabilitar-um-bot%C3%A3o-se-pelo-menos-um-checkbox-for-marcado
-/* agreement.onclick = function () {
-  const checkButton = document.querySelector('input[name=\'agreement\']:checked');
-  submitBtn.disabled = checkButton ? false : true;
-}; */
+function writeEmail() {
+  const inputEmailValue = `Email: ${inputEmail.value}`;
+  let paragraphInputEmail = document.createElement('p');
+  paragraphInputEmail.innerHTML = inputEmailValue;
+  evaluationForm.appendChild(paragraphInputEmail);
+}
+
+function writeHouse() {
+  const optionHouse = house.options[house.selectedIndex].text;
+  const textHouse = `Casa: ${optionHouse}`;
+  let paragraphHouse = document.createElement('p');
+  paragraphHouse.innerHTML = textHouse;
+  evaluationForm.appendChild(paragraphHouse);
+}
+
+function writeFamily() {
+  let familyItens = [];
+  for (let index = 0; index < family.length; index += 1) {
+    if (family[index].checked) {
+      familyItens.push(family[index].value);
+    }
+  }
+  const textFamily = `Família: ${familyItens}`;
+  let paragraphFamily = document.createElement('p');
+  paragraphFamily.innerHTML = textFamily;
+  evaluationForm.appendChild(paragraphFamily);
+}
+
+function writeSubject() {
+  let subjectItens = [];
+  for (let index = 0; index < subject.length; index += 1) {
+    if (subject[index].checked) {
+      subjectItens.push(` ${subject[index].value}`);
+    }
+  }
+  const textSubject = `Matérias: ${subjectItens}`;
+  let paragraphSubject = document.createElement('p');
+  paragraphSubject.innerHTML = textSubject;
+  evaluationForm.appendChild(paragraphSubject);
+}
+
+function writeRate() {
+  let rateItens = [];
+  for (let index = 0; index < rate.length; index += 1) {
+    if (rate[index].checked) {
+      rateItens.push(rate[index].value);
+    }
+  }
+  const textRate = `Avaliação: ${rateItens}`;
+  let paragraphRate = document.createElement('p');
+  paragraphRate.innerHTML = textRate;
+  evaluationForm.appendChild(paragraphRate);
+}
+
+function writeNotes() {
+  const notes = `Observações: ${textArea.value}`;
+  let paragraphNotes = document.createElement('p');
+  paragraphNotes.innerHTML = notes;
+  evaluationForm.appendChild(paragraphNotes);
+}
+
+function filledInformation() {
+  evaluationForm.innerHTML = '';
+  writeFullName();
+  writeEmail();
+  writeHouse();
+  writeFamily();
+  writeSubject();
+  writeRate();
+  writeNotes();
+}
+
+loginButton.addEventListener('click', checkLogin);
 
 agreement.addEventListener('click', enableSendButton);
 
 textArea.addEventListener('input', countingChar);
+
+submitBtn.addEventListener('click', filledInformation);
